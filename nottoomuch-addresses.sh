@@ -384,7 +384,7 @@ undef $database_path;
 my $ptime = $sometime + 5;
 my $addrcount = 0;
 $| = 1;
-open P, '-|', qw/notmuch search --sort=newest-first --output=files/, $sstr;
+open P, '-|', qw/notmuch search --sort=newest-first --output=files tag:sent/, $sstr;
 X: while (<P>) {
     chomp;
     foreach my $re (@exclude_re) { next X if /$re/; }
